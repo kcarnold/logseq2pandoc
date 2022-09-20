@@ -31,6 +31,7 @@ def collapse_li(item):
         elif isinstance(child, pf.Plain):
             result.append(pf.Para(*child.content))
         elif isinstance(child, pf.BulletList):
+            # NOTE: Change this to the commented version if you actually want bulleted lists.
             if True:#prev_was_header:
                 result.extend([r for item in child.content for r in collapse_li(item)])
             else:
